@@ -1,40 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### JeyookProjectFront
 
-## Getting Started
+#### 기술스택
+node.js / next.js / react / redux / redux-toolkit / redux-saga / emotion /
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+##### 개발 컨벤션 
+1.모든 변수명은 camelCase
+2.페이지 안에 들어가는 이름은 kebab-case
+3.let 대신 const이 기본이다.
+4.import 순서는 아래와 같이 정렬합니다.
+
+import React from 'react';                 // 1. React + hook
+import Button from 'url';                  // 2. Components
+import './Button.scss'                     // 3. Scss
+
+5.상수는 SNAKE_CASE를 따릅니다.
+const USER_DATA;
+
+6.변수와 조합해 문자열을 생성하는 경우에는 템플릿 리터럴을 사용합니다.
+const message = hello, ${name}!;         // good
+const message = 'hello' + name + "!";      // bad
+
+7.모든 변수는 가장 최상단에 선언합니다.
+
+###### 컴포넌트 관련 컨벤션
+1.useState와 같은 함수는 컴포넌트의 최상단에 선언합니다.
+2.useEffect는 맨 밑에 선언합니다. 
+
+###### git branch 관련 컨벤션 
+Branch
+// 브랜치 이름은 기능 및 컴포넌트별로 명명합니다.
+feature/submit
+component/button
+
+// 긴급한 오류를 수정하기 위해 아래와 같은 브랜치를 생성할 수도 있습니다.
+hotfix
+PR & commit
+// PR은 하나의 기능 개발 완료 시 진행합니다. 여러 commit이 쌓여서 하나의 PR이 완성됩니다. 즉 commit은 PR에 대한 상세 개발 내역입니다.
+PR: 로그인 화면 개발
+commit: 인풋 컴포넌트 개발 / 버튼 컴포넌트 개발 / 유효성 검사 기능 추가 등
+
+// commit 메시지는 아래와 같이 나눠 작성합니다.
+[feat] 제목          // 기능 추가
+[fix] 제목           // 버그 수정
+[refact] 제목        // 리팩토링
+[style] 제목         // UI 수정
+[etc] 제목           // 기타 수정 사항
+
+
+###### 폴더구조 
+
+```
+├── public
+└── src
+    ├── api
+    ├── components       // UI 단위별로 쪼개서 관리 
+    │    ├── atoms
+    │    ├── layouts
+    │    ├── modals
+    │    ├── molecules
+    │    ├── organisms
+    │    ├── templates
+    │    └── utilies 
+    ├── hooks            // 커스텀 훅에 대한 필요 시 사용 
+    ├── pages            // 각 페이지들에 대한 폴더
+    ├── store            // redux 폴더 
+    │    ├── actions
+    │    └── reducers  
+    ├── styles           // css 폴더 
+    └── utils            // 공통으로 쓰일 함수들에 대한 폴더 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+######  추가 개발사항
+프론트엔드 테스트코드 도입 예정(maybe)
