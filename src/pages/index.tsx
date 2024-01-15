@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Thumbnail from '../components/atoms/Thumbnail';
 
 export default function Home() {
   return (
@@ -11,6 +12,12 @@ export default function Home() {
       </Head>
 
       <div>테스트 잘 보이시나요?</div>
+      <Thumbnail
+        image="/images/yellow_filled_star.svg"
+        cafeName="example"
+        width={8}
+        height={4}
+      />
     </>
   );
 }
