@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/navigation';
 
+//font-size: 16px(1rem)
+//iconWrap 전체크기: 40px(2.5rem) x 56px(3.5rem)
+//img크기: 32px(2rem)
+
 type NavIconProps = {
   icon: string;
   name: string;
@@ -25,10 +29,6 @@ const NavIcon = ({ icon, name, path }: NavIconProps) => {
 };
 
 export default NavIcon;
-
-//font-size: 16px(1rem)
-//iconWrap 전체크기: 40px(2.5rem) x 56px(3.5rem)
-//img크기: 32px(2rem)
 
 const NavIconWrap = styled.p`
   display: flex;
