@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Score from '../components/atoms/Score';
 
 export default function Home() {
   return (
