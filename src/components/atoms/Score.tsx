@@ -21,9 +21,7 @@ const Score = ({
   fontSize,
   setSendScore,
 }: ScoreProps) => {
-  const [starPercentage, setStarPercentage] = useState(
-    score ? (score / 5) * 100 : 0,
-  );
+  const [starPercentage, setStarPercentage] = useState(0);
   const [isClicking, setIsClicking] = useState(false);
   const scoreWrapRef = useRef<HTMLDivElement>(null);
 
@@ -70,32 +68,37 @@ const Score = ({
 
   return (
     <ScoreWrap width={width} height={height}>
-      <ScoreContentsWrap
-        ref={scoreWrapRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleClick}
-      >
-        {[...Array(5)].map((_, index) => (
-          <span key={index}>
-            <Img src="/images/yellow_star.svg" alt={`별점 ${index + 1}`} />
-          </span>
-        ))}
-        <FilledStar starPercentage={starPercentage}>
+      {!score && (
+        <ScoreContentsWrap
+          ref={scoreWrapRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleClick}
+        >
           {[...Array(5)].map((_, index) => (
             <span key={index}>
-              <img
-                src="/images/yellow_filled_star.svg"
-                alt={`채워진 별점 ${index + 1}`}
-              />
+              <Img src="/images/yellow_star.svg" alt={`별점 ${index + 1}`} />
             </span>
           ))}
-        </FilledStar>
-      </ScoreContentsWrap>
+          <FilledStar starPercentage={starPercentage}>
+            {[...Array(5)].map((_, index) => (
+              <span key={index}>
+                <img
+                  src="/images/yellow_filled_star.svg"
+                  alt={`채워진 별점 ${index + 1}`}
+                />
+              </span>
+            ))}
+          </FilledStar>
+        </ScoreContentsWrap>
+      )}
       {score && (
-        <ScoreText fontColor={fontColor} fontSize={fontSize}>
-          {score}
-        </ScoreText>
+        <>
+          <Img src="/images/yellow_filled_star.svg" alt="별점" />
+          <ScoreText fontColor={fontColor} fontSize={fontSize}>
+            {score}
+          </ScoreText>
+        </>
       )}
     </ScoreWrap>
   );

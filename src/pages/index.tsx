@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Score from '../components/atoms/Score';
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
       </Head>
 
       <div>테스트 잘 보이시나요?</div>
+      <Score />
+      <Score score={3.4} width={3} />
     </>
   );
 }
