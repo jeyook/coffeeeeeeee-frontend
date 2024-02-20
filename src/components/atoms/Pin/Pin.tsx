@@ -10,15 +10,16 @@ type PinProps = {
 const Pin = ({ content, backgroundColor, textColor, onClick }: PinProps) => {
   // content가 10글자를 넘는 경우 축약
   return (
-    <PinWrap>
+    <PinWrap className="pin-wrapper">
       <PinHead
+        className="pin-head"
         backgroundColor={backgroundColor}
         textColor={textColor}
         onClick={onClick}
       >
         {content.length > 10 ? content.slice(0, 10) + '...' : content}
       </PinHead>
-      <PinTail />
+      <PinTail className="pin-tail" />
     </PinWrap>
   );
 };
@@ -28,6 +29,11 @@ const PinWrap = styled.div`
   flex-direction: column;
   align-items: center;
   width: fit-content;
+  z-index: 100;
+  &:hover {
+    z-index: 1000;
+    filter: brightness(150%);
+  }
 `;
 
 const PinHead = styled.div<{
