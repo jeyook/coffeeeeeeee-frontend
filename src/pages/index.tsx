@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Input from '../components/atoms/Input/Input';
 export default function Home() {
-  const testChange = () => {
-    console.log('이벤트 확인 콘솔');
+  const testChange = (event: any) => {
+    console.log(event.target.value);
   };
   return (
     <>

@@ -4,7 +4,7 @@ type InputProps = {
   fontSize?: string;
   placeholder?: string;
   borderRadius?: string;
-  onChange: () => void;
+  onChange: (event: any) => void;
   color?: string;
 };
 
