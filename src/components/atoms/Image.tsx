@@ -24,7 +24,7 @@ const ImageWrap = styled.p<{ width?: number; height?: number }>`
   overflow: hidden;
   width: ${({ width }) => (width !== undefined ? `${width}rem` : '8rem')};
   height: ${({ height }) => (height !== undefined ? `${height}rem` : '6rem')};
-  border-radius: 0.5rem;
+  border-radius: 0.6rem;
 
   .img {
     height: 100%;
