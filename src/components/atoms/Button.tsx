@@ -41,7 +41,8 @@ export default Button;
 
 const Btn = styled.button<{ width?: number }>`
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: ${({ width }) => (width !== undefined ? `${width}rem` : '3.6rem')};
   border: none;
