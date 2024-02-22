@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 type SelectBoxProps = {
   fontSize?: string;
   borderRadius?: string;
-  defultValue?: string; // all은 전체선택, 값이 없으면 선택하세요 표시
+  defultValue?: boolean; // all은 전체선택, 값이 없으면 선택하세요 표시
   id?: string;
   name?: string;
   disabled?: boolean; // true시 disabled처리 값이 없거나 false일때는 사용가능
@@ -31,8 +31,8 @@ const SelectBox = ({
         id={id}
         name={name}
       >
-        {defultValue === 'all' ? (
-          <option value="all">전체선택</option>
+        {defultValue ? (
+          <option value="99">전체선택</option>
         ) : (
           <option value="0">선택해주세요</option>
         )}
