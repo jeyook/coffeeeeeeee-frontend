@@ -4,10 +4,10 @@ type TextBoxProps = {
   fontSize?: string;
   placeholder?: string;
   borderRadius?: string;
-  onChange: (event: any) => void;
   color?: string;
-  resize?: string;
+  resize?: boolean;
   maxLength?: number;
+  onChange: (event: any) => void;
 };
 
 const TextBox = ({
@@ -45,13 +45,13 @@ const TextAreaBox = styled.textarea<{
   fontSize?: string;
   borderRadius?: string;
   color?: string;
-  resize?: string;
+  resize?: boolean;
 }>`
   border-radius: ${props => props.borderRadius || '0'};
   padding: 0.5rem 1rem;
   font-size: ${props => props.fontSize || '1rem'};
   color: ${props => props.color};
-  resize: ${props => (props.resize === 'N' ? 'none' : 'auto')};
+  resize: ${props => (props.resize === false ? 'none' : 'auto')};
 `;
 
 export default TextBox;
