@@ -17,7 +17,7 @@ const Image = ({ imgUrl, imgAlt, width, height }: ImageProps) => {
 
 export default Image;
 
-const ImageWrap = styled.p<{ width?: number; height?: number }>`
+const ImageWrap = styled.div<{ width?: number; height?: number }>`
   display: flex;
   justify-content: center;
   align-items: center;
