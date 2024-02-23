@@ -2,12 +2,17 @@ import styled from '@emotion/styled';
 
 type ButtonProps = {
   name?: string;
-  imgUrl: string;
-  imgAlt: string;
+  imgUrl?: string;
+  imgAlt?: string;
   width?: number;
+  height?: number;
   fontSize?: number;
   fontColor?: string;
   fontWeight?: number;
+  borderColor?: string;
+  borderRadius?: boolean;
+  backgroundColor?: string;
+  flexDirection?: 'row';
   onClick: () => void;
 };
 
@@ -16,14 +21,31 @@ const Button = ({
   imgAlt,
   name,
   width,
+  height,
   fontSize,
   fontColor,
   fontWeight,
+  borderColor,
+  borderRadius,
+  backgroundColor,
+  flexDirection,
   onClick,
 }: ButtonProps) => {
   return (
-    <Btn width={width} onClick={() => onClick()}>
-      <Img width={width} src={imgUrl} alt={imgAlt} />
+    <Btn
+      width={width}
+      height={height}
+      borderColor={borderColor}
+      borderRadius={borderRadius}
+      backgroundColor={backgroundColor}
+      flexDirection={flexDirection}
+      onClick={onClick}
+    >
+      {imgUrl && flexDirection ? (
+        <ImgRow src={imgUrl} alt={imgAlt} />
+      ) : (
+        <Img width={width} src={imgUrl} alt={imgAlt} />
+      )}
       {name && (
         <BtnName
           fontSize={fontSize}
@@ -39,20 +61,53 @@ const Button = ({
 
 export default Button;
 
-const Btn = styled.button<{ width?: number }>`
+const Btn = styled.button<{
+  width?: number;
+  height?: number;
+  borderColor?: string;
+  borderRadius?: boolean;
+  backgroundColor?: string;
+  flexDirection?: 'row';
+}>`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  ${({ flexDirection }) =>
+    flexDirection === 'row' ? null : 'flex-direction: column;'}
+  gap: 0.4rem;
   width: ${({ width }) => (width !== undefined ? `${width}rem` : '3.6rem')};
-  border: none;
-  background: none;
+  height: ${({ height }) => (height !== undefined ? `${height}rem` : 'auto')};
+  padding: 0.3rem;
+  border: ${({ borderColor }) =>
+    borderColor !== undefined ? `0.1rem solid ${borderColor}` : 'none'};
+  background: ${({ backgroundColor }) =>
+    backgroundColor !== undefined ? `${backgroundColor}` : 'none'};
+  border-radius: ${({ borderRadius }) => (borderRadius ? '0.6rem' : '0')};
   cursor: pointer;
 `;
 
-const Img = styled.img<{ width?: number }>`
-  width: ${({ width }) => (width !== undefined ? `${width}rem` : '3.6rem')};
-  height: ${({ width }) => (width !== undefined ? `${width}rem` : '3.6rem')};
+const Img = styled.img<{
+  width?: number;
+  borderColor?: string;
+  fill?: string;
+}>`
+  width: ${({ width, borderColor }) =>
+    width !== undefined
+      ? borderColor !== undefined
+        ? `${width - 0.8}rem`
+        : `${width - 0.6}rem`
+      : '3rem'};
+  height: ${({ width, borderColor }) =>
+    width !== undefined
+      ? borderColor !== undefined
+        ? `${width - 0.8}rem`
+        : `${width - 0.6}rem`
+      : '3rem'};
+`;
+
+const ImgRow = styled.img<{ fill?: string }>`
+  width: 1.8rem;
+  height: auto;
 `;
 
 const BtnName = styled.span<{
@@ -60,9 +115,9 @@ const BtnName = styled.span<{
   fontWeight?: number;
   fontColor?: string;
 }>`
-  margin-top: 0.4rem;
+  margin-top: 0.1rem;
   font-size: ${({ fontSize }) =>
-    fontSize !== undefined ? `${fontSize}rem` : '1.2rem'};
+    fontSize !== undefined ? `${fontSize}rem` : '0.8rem'};
   font-weight: ${({ fontWeight }) =>
     fontWeight !== undefined ? `${fontWeight}` : '600'};
   color: ${({ fontColor }) =>
