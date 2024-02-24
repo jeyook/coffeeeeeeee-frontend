@@ -89,7 +89,6 @@ const Btn = styled.button<{
 const Img = styled.img<{
   width?: number;
   borderColor?: string;
-  fill?: string;
 }>`
   width: ${({ width, borderColor }) =>
     width !== undefined
@@ -105,7 +104,7 @@ const Img = styled.img<{
       : '3rem'};
 `;
 
-const ImgRow = styled.img<{ fill?: string }>`
+const ImgRow = styled.img`
   width: 1.8rem;
   height: auto;
 `;
