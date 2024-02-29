@@ -9,6 +9,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
+  --primary-rgb: #ead258;
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
     #16abff33 0deg,
@@ -43,9 +44,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 50, 50, 50;
+    --background-end-rgb: 50, 50, 50;
 
+    --primary-rgb: #ead258;
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
     --secondary-glow: linear-gradient(
       to bottom right,
@@ -99,6 +101,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+input {
+  border: none;
+  background-color: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
