@@ -4,8 +4,8 @@ type InputProps = {
   fontSize?: string;
   placeholder?: string;
   borderRadius?: string;
-  onChange: (event: any) => void;
   color?: string;
+  onChange: (event: any) => void;
 };
 
 const Input = ({
@@ -32,7 +32,7 @@ const InputWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
+  width: 100%;
 `;
 
 const InputBox = styled.input<{
@@ -44,6 +44,7 @@ const InputBox = styled.input<{
   padding: 0.5rem 1rem;
   font-size: ${props => props.fontSize || '1rem'};
   color: ${props => props.color};
+  width: 100%;
 `;
 
 export default Input;
