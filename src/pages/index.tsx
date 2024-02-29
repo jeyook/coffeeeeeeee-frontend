@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Input from '../components/atoms/Input/Input';
+import Header from '../components/molecules/Header/Header';
 export default function Home() {
   const testChange = (event: any) => {
     console.log(event.target.value);
@@ -12,6 +13,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header></Header>
       <Input
         onChange={testChange}
         fontSize="2rem"
