@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { ChangeEvent } from 'react';
 
 type SelectBoxProps = {
   fontSize?: string;
@@ -7,8 +8,8 @@ type SelectBoxProps = {
   id?: string;
   name?: string;
   disabled?: boolean; // true시 disabled처리 값이 없거나 false일때는 사용가능
-  options: Record<string, any>;
-  onChange: (event: any) => void;
+  options: Record<string, string | number>; //예시 => const option = { 남자: 1, 여자: 2 };
+  onChange: (event: ChangeEvent<HTMLSelectElement>) => void; //예시 const testChange = (event: ChangeEvent<HTMLSelectElement>) => { console.log(event.target.value);};
 };
 
 const SelectBox = ({
@@ -25,11 +26,11 @@ const SelectBox = ({
     <SelectBoxWrap>
       <SelectBoxBox
         fontSize={fontSize}
-        onChange={onChange}
         borderRadius={borderRadius}
         disabled={disabled}
         id={id}
         name={name}
+        onChange={onChange}
       >
         {defultValue ? (
           <option value="99">전체선택</option>
