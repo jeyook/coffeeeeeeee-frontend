@@ -4,7 +4,7 @@ import { ChangeEvent } from 'react';
 type SelectBoxProps = {
   fontSize?: string;
   borderRadius?: string;
-  defultValue?: boolean; // all은 전체선택, 값이 없으면 선택하세요 표시
+  selectAll?: boolean; // true 전체선택, 값이 없으면 or false 선택하세요 표시
   id?: string;
   name?: string;
   disabled?: boolean; // true시 disabled처리 값이 없거나 false일때는 사용가능
@@ -15,7 +15,7 @@ type SelectBoxProps = {
 const SelectBox = ({
   fontSize,
   borderRadius,
-  defultValue,
+  selectAll,
   id,
   name,
   disabled,
@@ -32,14 +32,14 @@ const SelectBox = ({
         name={name}
         onChange={onChange}
       >
-        {defultValue ? (
+        {selectAll ? (
           <option value="99">전체선택</option>
         ) : (
           <option value="0">선택해주세요</option>
         )}
-        {Object.entries(options).map(([key, value]) => (
-          <option key={key} value={value}>
-            {key}
+        {Object.entries(options).map(([option, value]) => (
+          <option key={value} value={value}>
+            {option}
           </option>
         ))}
       </SelectBoxBox>
