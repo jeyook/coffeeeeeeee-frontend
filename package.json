@@ -22,6 +22,7 @@
     "redux-saga": "^1.2.3"
   },
   "devDependencies": {
+    "@types/navermaps": "^3.7.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
