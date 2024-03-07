@@ -19,7 +19,7 @@ const Text = ({
   width,
   height,
   textAlign,
-  lengthLimit = 150,
+  lengthLimit,
   onClick,
 }: TextProps) => {
   // onClick은 댓글, 카페 주소 등에서 기능이 필요하면 사용
@@ -37,9 +37,13 @@ const Text = ({
         textAlign={textAlign}
         onClick={onClick}
       >
-        {isExpanded ? content : content.slice(0, 150) + '...'}
+        {!lengthLimit || content.length < lengthLimit
+          ? content
+          : isExpanded
+            ? content
+            : content.slice(0, lengthLimit) + '...'}
       </TextContent>
-      {content.length > lengthLimit ? (
+      {lengthLimit && content.length > lengthLimit ? (
         <ExpandButton size={size} onClick={onClickExpand}>
           {isExpanded ? '...접기' : '...더보기'}
         </ExpandButton>
