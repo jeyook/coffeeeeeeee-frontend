@@ -6,7 +6,7 @@ const DetailViewTemplate = () => {
   return (
     <DetailViewTemplateWrap>
       <PlaceDetail
-        name={'이름'}
+        name={'커피커피'}
         imageUrl={''}
         address={'서울특별시 서초구 방배동 세연로 94-515 커피타워 106호'}
         homepageUrl={'홈페이지주소'}

@@ -8,14 +8,33 @@ interface PlaceOpeningInfoProps {
 const PlaceOpeningInfo = ({ openingHours }: PlaceOpeningInfoProps) => {
   return (
     <PlaceOpeningInfoWrap>
-      <Label content="영업시간" size={'1.6rem'} />
-      {/* Label에서 Text로 교체 */}
-      <Label content={openingHours} size={'1.4rem'} />
+      <OpeningHoursTitleWrap>
+        <Label content="영업시간" size={'1.6rem'} />
+      </OpeningHoursTitleWrap>
+      <OpeningHoursContentWrap>
+        {/* Label에서 Text로 교체 */}
+        <Label content={openingHours} size={'1.4rem'} color="gray" />
+      </OpeningHoursContentWrap>
     </PlaceOpeningInfoWrap>
   );
 };
 
 const PlaceOpeningInfoWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+`;
+
+const OpeningHoursTitleWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.2rem;
+  width: 8rem;
+`;
+
+const OpeningHoursContentWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

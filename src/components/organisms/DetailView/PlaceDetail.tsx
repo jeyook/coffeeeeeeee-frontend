@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
+
 import Label from '../../atoms/Label/Label';
 import Image from '../../atoms/Image';
-import Rating from '../../molecules/Rating';
-import Button from '../../atoms/Button';
 import PlaceTitle from '../../molecules/DetailView/PlaceTitle';
 import RatingAndTags from '../../molecules/DetailView/RatingAndTags';
 import PlaceOpeningInfo from '../../molecules/DetailView/PlaceOpeningInfo';
@@ -58,6 +57,7 @@ const PlaceDetailWrap = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 1.3rem;
+  border-bottom: 1px solid #f4f4f4;
 `;
 
 const PlaceImageWrap = styled.div`
