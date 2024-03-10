@@ -15,8 +15,8 @@ const PlaceMenuGrid = ({ menu }: PlaceMenuGridProps) => {
   // TODO: 로직 구현
   return (
     <PlaceMenuGridWrap>
-      {menu.map(item => (
-        <MenuWrap>
+      {menu.map((item, i) => (
+        <MenuWrap key={i}>
           <MenuImageWrap>
             <Image
               imgUrl={item.imageUrl}

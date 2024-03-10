@@ -13,8 +13,8 @@ const RatingAndTags = ({ rating, tags }: RatingAndTagsProps) => {
         <Rating rating={rating} />
       </RatingWrap>
       <TagsWrap>
-        {tags.map(tag => (
-          <TagWrap>
+        {tags.map((tag, i) => (
+          <TagWrap key={i}>
             <Label content={tag} size={'1.4rem'}></Label>
           </TagWrap>
         ))}

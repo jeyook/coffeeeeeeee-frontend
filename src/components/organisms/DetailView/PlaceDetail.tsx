@@ -5,7 +5,6 @@ import Image from '../../atoms/Image';
 import PlaceTitle from '../../molecules/DetailView/PlaceTitle';
 import RatingAndTags from '../../molecules/DetailView/RatingAndTags';
 import PlaceOpeningInfo from '../../molecules/DetailView/PlaceOpeningInfo';
-import PlaceMenu from '../../molecules/DetailView/PlaceMenuGrid';
 
 interface PlaceDetailProps {
   name: string;
@@ -14,10 +13,8 @@ interface PlaceDetailProps {
   homepageUrl: string;
   tags: string[];
   rating: number;
-  // TODO: 추가 정보들 확인
-  // menu,
-  // openingInfo,
-  // bookmarkCounts: number;
+  openingInfo: string;
+  bookmarkCounts: number;
 }
 
 const PlaceDetail = ({

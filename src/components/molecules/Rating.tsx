@@ -4,18 +4,20 @@ import Image from '../atoms/Image';
 
 interface RatingProps {
   rating: number;
+  iconSize?: number;
+  fontSize?: number;
 }
 
-const Rating = ({ rating }: RatingProps) => {
+const Rating = ({ rating, iconSize = 2.4, fontSize = 2.4 }: RatingProps) => {
   return (
     <RatingWrap>
       <Image
         imgUrl={'https://www.svgrepo.com/show/511145/star.svg'}
         imgAlt={'평점'}
-        width={2.4}
-        height={2.4}
+        width={iconSize}
+        height={iconSize}
       ></Image>
-      <Label content={String(rating)} size={'2.4rem'}></Label>
+      <Label content={String(rating)} size={`${fontSize}rem`}></Label>
     </RatingWrap>
   );
 };

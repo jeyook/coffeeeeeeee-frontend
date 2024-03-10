@@ -3,6 +3,7 @@ import PlaceDetail from '../organisms/DetailView/PlaceDetail';
 import PlaceReviews from '../organisms/DetailView/PlaceReviews';
 import PlaceMenu from '../organisms/DetailView/PlaceMenu';
 import { Menu } from '../molecules/DetailView/PlaceMenuGrid';
+import { Review } from '../molecules/DetailView/PlaceReview';
 
 interface DetailViewProps {
   name: string;
@@ -12,44 +13,36 @@ interface DetailViewProps {
   tags: string[];
   rating: number;
   menu: Menu[];
+  openingInfo: string;
+  bookmarkCounts: number;
+  reviews: Review[];
 }
-const DetailViewTemplate = () => {
+const DetailViewTemplate = ({
+  name,
+  imageUrl,
+  address,
+  homepageUrl,
+  tags,
+  rating,
+  menu,
+  openingInfo,
+  bookmarkCounts,
+  reviews,
+}: DetailViewProps) => {
   return (
     <DetailViewTemplateWrap>
       <PlaceDetail
-        name={'커피커피'}
-        imageUrl={''}
-        address={'서울특별시 서초구 방배동 세연로 94-515 커피타워 106호'}
-        homepageUrl={'홈페이지주소'}
-        tags={[
-          '#사진맛집',
-          '#다양한원두',
-          '#애견',
-          '#데이트맛집',
-          '#디저트맛집',
-        ]}
-        rating={4.5}
+        name={name}
+        imageUrl={imageUrl}
+        address={address}
+        homepageUrl={homepageUrl}
+        tags={tags}
+        rating={rating}
+        openingInfo={openingInfo}
+        bookmarkCounts={bookmarkCounts}
       />
-      <PlaceMenu
-        menu={[
-          {
-            imageUrl: 'url1',
-            price: 3000,
-            name: '아메리카노',
-          },
-          {
-            imageUrl: 'url2',
-            price: 4000,
-            name: '라테',
-          },
-          {
-            imageUrl: 'url3',
-            price: 5000,
-            name: '핸드드립',
-          },
-        ]}
-      />
-      <PlaceReviews />
+      <PlaceMenu menu={menu} />
+      <PlaceReviews reviews={reviews} />
     </DetailViewTemplateWrap>
   );
 };
