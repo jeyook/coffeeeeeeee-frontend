@@ -6,12 +6,12 @@ const DetailViewTemplate = () => {
   return (
     <DetailViewTemplateWrap>
       <PlaceDetail
-        name={''}
+        name={'이름'}
         imageUrl={''}
-        address={''}
-        homepageUrl={''}
-        tags={[]}
-        rating={0}
+        address={'주소'}
+        homepageUrl={'홈페이지주소'}
+        tags={['로스팅', '스페셜티']}
+        rating={4.5}
       />
       <PlaceReviews />
     </DetailViewTemplateWrap>
@@ -23,3 +23,5 @@ const DetailViewTemplateWrap = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export default DetailViewTemplate;
