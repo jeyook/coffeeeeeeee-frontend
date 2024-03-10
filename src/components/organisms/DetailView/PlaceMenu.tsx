@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import PlaceMenuGrid from '../../molecules/DetailView/PlaceMenuGrid';
+import PlaceMenuGrid, { Menu } from '../../molecules/DetailView/PlaceMenuGrid';
 import Label from '../../atoms/Label/Label';
 
 interface PlaceMenuProps {
-  menu: string[];
+  menu: Menu[];
 }
 
 const PlaceMenu = ({ menu }: PlaceMenuProps) => {
@@ -12,7 +12,7 @@ const PlaceMenu = ({ menu }: PlaceMenuProps) => {
       <PlaceMenuTitleWrap>
         <Label content="메뉴" size="1.6rem"></Label>
       </PlaceMenuTitleWrap>
-      <PlaceMenuGrid menu={menu}></PlaceMenuGrid>;
+      <PlaceMenuGrid menu={menu}></PlaceMenuGrid>
     </PlaceMenuWrap>
   );
 };
@@ -32,6 +32,8 @@ const PlaceMenuTitleWrap = styled.div`
   justify-content: left;
   align-items: center;
   width: 100%;
+  padding-top: 1.3rem;
+  padding-bottom: 1rem;
 `;
 
 export default PlaceMenu;

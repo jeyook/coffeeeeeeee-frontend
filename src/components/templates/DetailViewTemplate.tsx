@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import PlaceDetail from '../organisms/DetailView/PlaceDetail';
 import PlaceReviews from '../organisms/DetailView/PlaceReviews';
 import PlaceMenu from '../organisms/DetailView/PlaceMenu';
+import { Menu } from '../molecules/DetailView/PlaceMenuGrid';
 
 interface DetailViewProps {
   name: string;
@@ -10,6 +11,7 @@ interface DetailViewProps {
   homepageUrl: string;
   tags: string[];
   rating: number;
+  menu: Menu[];
 }
 const DetailViewTemplate = () => {
   return (
@@ -28,7 +30,25 @@ const DetailViewTemplate = () => {
         ]}
         rating={4.5}
       />
-      <PlaceMenu menu={[]} />
+      <PlaceMenu
+        menu={[
+          {
+            imageUrl: 'url1',
+            price: 3000,
+            name: '아메리카노',
+          },
+          {
+            imageUrl: 'url2',
+            price: 4000,
+            name: '라테',
+          },
+          {
+            imageUrl: 'url3',
+            price: 5000,
+            name: '핸드드립',
+          },
+        ]}
+      />
       <PlaceReviews />
     </DetailViewTemplateWrap>
   );
