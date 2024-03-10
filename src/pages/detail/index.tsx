@@ -1,4 +1,5 @@
 import { Menu } from '../../components/molecules/DetailView/PlaceMenuGrid';
+import { Review } from '../../components/molecules/DetailView/PlaceReview';
 import DetailViewTemplate from '../../components/templates/DetailViewTemplate';
 
 const Detail = () => {

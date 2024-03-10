@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import PlaceDetail from '../organisms/DetailView/PlaceDetail';
-import PlaceReviews from '../organisms/DetailView/PlaceReviews';
+import PlaceReviewsList from '../organisms/DetailView/PlaceReviewsList';
 import PlaceMenu from '../organisms/DetailView/PlaceMenu';
 import { Menu } from '../molecules/DetailView/PlaceMenuGrid';
 import { Review } from '../molecules/DetailView/PlaceReview';
@@ -42,7 +42,7 @@ const DetailViewTemplate = ({
         bookmarkCounts={bookmarkCounts}
       />
       <PlaceMenu menu={menu} />
-      <PlaceReviews reviews={reviews} />
+      <PlaceReviewsList reviews={reviews} />
     </DetailViewTemplateWrap>
   );
 };
