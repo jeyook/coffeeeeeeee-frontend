@@ -8,9 +8,15 @@ const DetailViewTemplate = () => {
       <PlaceDetail
         name={'이름'}
         imageUrl={''}
-        address={'주소'}
+        address={'서울특별시 서초구 방배동 세연로 94-515 커피타워 106호'}
         homepageUrl={'홈페이지주소'}
-        tags={['로스팅', '스페셜티']}
+        tags={[
+          '#사진맛집',
+          '#다양한원두',
+          '#애견',
+          '#데이트맛집',
+          '#디저트맛집',
+        ]}
         rating={4.5}
       />
       <PlaceReviews />
