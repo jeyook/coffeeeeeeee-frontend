@@ -24,6 +24,7 @@ const PlaceOpeningInfoWrap = styled.div`
   justify-content: center;
   align-items: start;
   width: 100%;
+  padding: 1.3rem 0;
 `;
 
 const OpeningHoursTitleWrap = styled.div`

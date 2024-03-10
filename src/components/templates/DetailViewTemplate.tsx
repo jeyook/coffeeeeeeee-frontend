@@ -1,7 +1,16 @@
 import styled from '@emotion/styled';
 import PlaceDetail from '../organisms/DetailView/PlaceDetail';
 import PlaceReviews from '../organisms/DetailView/PlaceReviews';
+import PlaceMenu from '../organisms/DetailView/PlaceMenu';
 
+interface DetailViewProps {
+  name: string;
+  imageUrl: string;
+  address: string;
+  homepageUrl: string;
+  tags: string[];
+  rating: number;
+}
 const DetailViewTemplate = () => {
   return (
     <DetailViewTemplateWrap>
@@ -19,6 +28,7 @@ const DetailViewTemplate = () => {
         ]}
         rating={4.5}
       />
+      <PlaceMenu menu={[]} />
       <PlaceReviews />
     </DetailViewTemplateWrap>
   );
@@ -28,6 +38,7 @@ const DetailViewTemplateWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 export default DetailViewTemplate;

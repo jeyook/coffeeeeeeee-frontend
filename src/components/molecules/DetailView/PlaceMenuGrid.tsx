@@ -1,22 +1,22 @@
 import styled from '@emotion/styled';
 
-interface PlaceMenuProps {
+interface PlaceMenuGridProps {
   menu: string[];
 }
-const PlaceMenu = ({ menu }: PlaceMenuProps) => {
+const PlaceMenuGrid = ({ menu }: PlaceMenuGridProps) => {
   // TODO: menu type 지정
   // TODO: 로직 구현
   return (
-    <PlaceMenuWrap>
+    <PlaceMenuGridWrap>
       {/* {menu.map((item) => <Menu info={item.info} />)} */}
-    </PlaceMenuWrap>
+    </PlaceMenuGridWrap>
   );
 };
 
-const PlaceMenuWrap = styled.div`
+const PlaceMenuGridWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-export default PlaceMenu;
+export default PlaceMenuGrid;

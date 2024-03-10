@@ -5,7 +5,7 @@ import Image from '../../atoms/Image';
 import PlaceTitle from '../../molecules/DetailView/PlaceTitle';
 import RatingAndTags from '../../molecules/DetailView/RatingAndTags';
 import PlaceOpeningInfo from '../../molecules/DetailView/PlaceOpeningInfo';
-import PlaceMenu from '../../molecules/DetailView/PlaceMenu';
+import PlaceMenu from '../../molecules/DetailView/PlaceMenuGrid';
 
 interface PlaceDetailProps {
   name: string;
@@ -28,12 +28,10 @@ const PlaceDetail = ({
   rating,
   // bookmaikCounts,
   // openingInfo,
-  // menu,
 }: PlaceDetailProps) => {
   const bookmarkCounts = 100;
   const openingInfo = '평일 9:00 ~ 23:00 주말·공휴일 10:00 ~ 22:00 연중무휴';
 
-  const menu = ['a', 'b', 'c'];
   return (
     <PlaceDetailWrap>
       <PlaceTitle name={name} bookmarkCount={bookmarkCounts}></PlaceTitle>
@@ -45,7 +43,6 @@ const PlaceDetail = ({
         <Label content={address} size="1.4rem" />
       </AddressWrap>
       <PlaceOpeningInfo openingHours={openingInfo}></PlaceOpeningInfo>
-      <PlaceMenu menu={menu}></PlaceMenu>
     </PlaceDetailWrap>
   );
 };
